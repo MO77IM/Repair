@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <scroll-view wx:if="{{ischoose==false}}">
+    <view class="storeInfo" wx:for="{{stores}}" wx:key="item">
+      <view class="items" id="{{item._id}}" bindtap="onChooseStore">
+        <view>店铺名称:{{item.name}}</view>
+        <view>店铺地址:{{item.addr}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+<view class="storeInfo" wx:if="{{ischoose==true}}">
+  <view class="storeTitle">
+    <text>{{currentStore.name}}</text>
+  </view>
+  <view>地址：{{currentStore.addr}}</view>
+  <view>联系方式：{{currentStore.phone}}</view>
+  <view>评分：{{star}}</view>
+  <button bindtap="onOrder">订购服务</button>
+  <button bindtap="onBack">返回</button>
+  <scroll-view class="comments">
+    <text>评价</text>
+    <view class="commentList" wx:for="{{comments}}" wx:key="item">
+      <view class="comment">
+      <view>评分：{{item.star}}</view>
+      <text>{{item.body}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+</view>

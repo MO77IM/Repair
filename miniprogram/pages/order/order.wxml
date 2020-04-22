@@ -1,0 +1,10 @@
+<!--miniprogram/pages/order/order.wxml-->
+<view>
+  <scroll-view class='orders_list' scroll-y="true" >
+    <view>
+      <text>订单编号:</text>
+      <text>维修人：</text>
+      <text>价格：</text>
+    </view>
+  </scroll-view>
+</view>
